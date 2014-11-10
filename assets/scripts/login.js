@@ -5,7 +5,7 @@ $(function(){
                 type: 'POST',
                 data: postData,
                 //change the url for your project
-                url: 'http://192.168.1.127:8888/FlatMgmt/php/login.php',
+                url: 'http://mysite/php/login.php',
                 success: function(data){
                 	//alert(eval(data));
                     if(eval(data)=="Wrong Password") {
