@@ -4,7 +4,6 @@ $server = "localhost";
 $username = "root";
 $dbpassword = "root";
 $database = "vicinity";
-
 $wrng_pwd="Wrong Password";
 $invalid_email="E-mail does not exist";
 $email = $_POST["email"];
