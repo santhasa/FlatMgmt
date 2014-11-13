@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vicinity - test</title>
+     <script src="assets/plugins/jquery-1.10.2.js"></script>
+    <script src="assets/plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="assets/plugins/metisMenu/jquery.metisMenu.js"></script>
+	<script>
+		function onLoad()
+		{
+		    $('#content').load('http://192.168.1.145:8888/flatmgmt/php/simpletest.php');
+		}
+		$(window).load(function () {
+			onLoad();
+		});
+	</script>
+</head>
+
+<body>
+	<div data-role="content" id="content">
+		
+	</div>
+
+</body>
+</html>
