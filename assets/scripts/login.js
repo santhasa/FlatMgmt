@@ -5,9 +5,9 @@ $(function(){
                 type: 'POST',
                 data: postData,
                 //change the url for your project
-                url: 'http://mysite/php/login.php',
+                url: 'http://192.168.1.145:8888/flatmgmt/php/login.php',
                 success: function(data){
-                	//alert(eval(data));
+                	alert(eval(data));
                     if(eval(data)=="Wrong Password") {
 		                    document.getElementById("wrongPwd").style.visibility="visible";
                     		document.getElementById("wrongEmail").style.visibility="hidden";
