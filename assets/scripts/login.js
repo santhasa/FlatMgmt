@@ -17,7 +17,7 @@ $(function(){
 		                    document.getElementById("errorMsg").innerHTML="Your e-mail does not seem to exist";
                     }
                     else {
-	                    window.location.href = "simpletest.html";
+	                    window.location.href = "dashboard.html";
 	                }
                 },
                 error: function(){

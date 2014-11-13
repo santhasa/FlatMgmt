@@ -1,0 +1,33 @@
+insert into apartment(apartment_name,apartment_address_line_1,apartment_address_line_2,apartment_address_line_3,locality,apartment_city,apartment_state,apartment_country,apartment_pincode,apartment_primary_contact_name,apartment_primary_contact_email,apartment_primary_phone,apartment_alternate_contact_name,apartment_alternate_contact_email,apartment_alternate_phone) values("Shubha","Block 89","P.T.Rajan Salai","","K.K.Nagar","Chennai","Tamil Nadu","India","600078","Sankararaman S","sankararaman@gmail.com","9962587398","Sriram","sankararaman@gmail.com","9962587398");
+
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values (1,"103","1_103_owner","1_103_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values (1,"201","1_201_owner","1_201_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values (1,"202","1_202_owner","1_202_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values (1,"203","1_203_owner","1_203_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values (1,"301","1_301_owner","1_301_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values (1,"302","1_302_owner","1_302_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values (1,"303","1_303_owner","1_303_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values (1,"401","1_303_owner","1_401_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values (1,"402","1_303_owner","1_402_tenant");
+
+
+insert into member(member_id,member_first_name,member_last_name,member_gender,member_dob,member_communication_address_line_1,member_communication_address_line_2,member_communication_address_line_3,member_communication_address_city,member_communication_address_state,member_communication_address_country,member_communication_address_pincode,member_communication_address_telephone,member_communication_address_mobile_primary,member_communication_address_mobile_alternate,member_communication_address_email_primary,member_communication_address_email_alternate,member_photo_file_id) values("MEM10000001","Sankararaman","Santhanaraman","Male","1975-12-02","Flat 101, Shubha Apartments","Block 89, P.T.Rajan Salai","K.K.Nagar","Chennai","Tamil Nadu","India","600078","0091442802979","00919962587398","00919963587298","sankar@tickingminds.com","sankararaman@gmail.com","MEM1000001_1");
+
++-----+----------+------------------+
+| sno | role_id  | role_name        |
++-----+----------+------------------+
+|   1 | role0001 | super_admin      |
+|   2 | role0002 | admin            |
+|   3 | role0003 | president        |
+|   4 | role0004 | secretary        |
+|   5 | role0005 | treasurer        |
+|   6 | role0006 | facility_manager |
+|   7 | role0007 | owner            |
+|   8 | role0008 | tenant           |
++-----+----------+------------------+
+
+
+
+insert into member_apartment_flat(apartment_id,flat_number,primary_status_id,member_id,member_type,member_status,member_status_start_date) values (1,"101","1_101_owner","MEM10000001","owner","active","2013-10-18");
+
+	
