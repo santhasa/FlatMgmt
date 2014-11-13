@@ -1,7 +1,6 @@
 <?php
 	header("Access-Control-Allow-Origin:*");
- 	echo '<ul class="dropdown-menu dropdown-tasks">
-                        <li>
+ 	echo '              <li>
                             <a href="#">
                                 <div>
                                     <p>
@@ -70,7 +69,5 @@
                                 <strong>See All Tasks</strong>
                                 <i class="fa fa-angle-right"></i>
                             </a>
-                        </li>
-                    </ul>';
-
+                        </li>';
 ?>

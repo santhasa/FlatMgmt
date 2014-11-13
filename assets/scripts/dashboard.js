@@ -1,27 +1,27 @@
 function onLoadNavBarMsgs()
 {
-    $('#navbarmsgcontent').load('http://192.168.1.145:8888/flatmgmt/php/navbar_msgs.php');
+    $('#navbarmsgcontent').load('http://192.168.1.9:8888/flatmgmt/php/navbar_msgs.php');
 }
 function onLoadDropDownTasks()
 {
-	$('#dropdowntasks').load('http://192.168.1.145:8888/flatmgmt/php/dropdowntasks.php');
+	$('#dropdowntasks').load('http://192.168.1.9:8888/flatmgmt/php/dropdowntasks.php');
 }
 function onLoadDropDownAlerts()
 {
-    $('#dropdownalerts').load('http://192.168.1.145:8888/flatmgmt/php/dropdownalerts.php');
+    $('#dropdownalerts').load('http://192.168.1.9:8888/flatmgmt/php/dropdownalerts.php');
 }
 function onLoadSideBar()
 {
-    $('#sidebar').load('http://192.168.1.145:8888/flatmgmt/php/sidebar.php');
+    $('#side-menu').load('http://192.168.1.9:8888/flatmgmt/php/sidebar.php');
 }
 function onLoadQuickInfo()
 {
-    $('#quickinfo').load('http://192.168.1.145:8888/flatmgmt/php/quickinfosection.php');
+    $('#quickinfo').load('http://192.168.1.9:8888/flatmgmt/php/quickinfosection.php');
 }
 $(window).load(function () {
 	onLoadNavBarMsgs();
 	onLoadDropDownTasks();
 	onLoadDropDownAlerts()
 	onLoadSideBar();
-	onLoadQuickInfo();
+	//onLoadQuickInfo();
 });

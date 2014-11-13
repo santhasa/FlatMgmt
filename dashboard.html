@@ -12,133 +12,7 @@
     <link href="assets/css/main-style.css" rel="stylesheet" />
     <!-- Page-Level CSS -->
     <link href="assets/plugins/morris/morris-0.4.3.min.css" rel="stylesheet" />
-	<!-- Core Scripts - Include with every page -->
-	<script src="assets/plugins/jquery-1.10.2.js"></script>
-	<script src="assets/plugins/bootstrap/bootstrap.min.js"></script>
-	<script src="assets/plugins/metisMenu/jquery.metisMenu.js"></script>
-	<script src="assets/plugins/pace/pace.js"></script>
-	<script src="assets/scripts/siminta.js"></script>
-	<!-- Page-Level Plugin Scripts-->
-	<script src="assets/plugins/flot/jquery.flot.js"></script>
-	<script src="assets/plugins/flot/jquery.flot.tooltip.min.js"></script>
-	<script src="assets/plugins/flot/jquery.flot.resize.js"></script>
-	<script src="assets/plugins/flot/jquery.flot.pie.js"></script>
-	<script src="assets/plugins/morris/raphael-2.1.0.min.js"></script>
-	<script src="assets/plugins/morris/morris.js"></script>
-	<script src="assets/scripts/dashboard.js"></script>
-	<script>
-		$(function () {  
-		Morris.Bar({
-		element: 'morris-bar-chart',
-		data: [
-		    { y: 'May 2014', a: 40000,  b: 39000 },
-		    { y: 'Jun 2014', a: 39000,  b: 38000 },
-		    { y: 'Jul 2014', a: 38000,  b: 38000 }
-		  ],
-		  xkey: 'y',
-		  ykeys: ['a', 'b'],
-		  labels: ['Income', 'Expenditure']
-		});
-		Morris.Bar({
-		element: 'morris-bar-chart-complaints',
-		data: [
-		    { y: 'May 2014', a: 15,  b: 5 },
-		    { y: 'Jun 2014', a: 20,  b: 22 },
-		    { y: 'Jul 2014', a: 10,  b: 5 }
-		  ],
-		  xkey: 'y',
-		  ykeys: ['a', 'b'],
-		  labels: ['Raised', 'Addressed']
-		});
-		
-	   Morris.Line({
-        element: 'morris-line-chart',
-        data: [{
-            y: 'Jun',
-            a: 100
-
-        }, {
-            y: 'Jul',
-            a: 75
-        }, {
-            y: 'Aug',
-            a: 80
-        }],
-        parseTime: false,
-        xkey: 'y',
-        ykeys: 'a',
-        labels: 'On-time Payment',
-        hideHover: 'auto',
-        resize: true
-    	});
-	});
-	</script>
-	<script>
-		$(function() {
-		var data = [{
-        label: "Salaries",
-        data: 20
-	    }, {
-        label: "AMC Cost",
-        data: 20
-    	},  {
-    	label: "Electricity",
-        data: 30
-	    },{
-    	label: "Repairs",
-        data: 30
-    	}];
-	    var plotObj = $.plot($("#flot-pie-chart1"), data, {
-        series: {
-            pie: {
-                show: true
-            }
-        },
-        grid: {
-            hoverable: true
-        },
-        tooltip: true,
-        tooltipOpts: {
-            content: "%p.0%, %s", // show percentages, rounding to 2 decimal places
-            shifts: {
-                x: 20,
-                y: 0
-            },
-            defaultTheme: false
-        }
-    	});
-	});
-	</script>
-	<script>
-		$(function() {
-	    var data = [{
-        label: "Assets under AMC Coverage",
-        data: 10
-    	}, {
-        label: "Assets not under AMC Coverage",
-        data: 10
-	    }];
-    	var plotObj = $.plot($("#flot-pie-chart"), data, {
-        	series: {
-	            pie: {
-    	            show: true
-       	     }
-        	},
-	        grid: {
-            hoverable: true
-    	    },
-        	tooltip: true,
-	        tooltipOpts: {
-            content: "%p.0%, %s", // show percentages, rounding to 2 decimal places
-            shifts: {
-                x: 20,
-                y: 0
-            },
-            defaultTheme: false
-    	    }
-    		});
-		});
-	</script>
+	
 </head>
 <body>
     <!--  wrapper -->
@@ -165,24 +39,24 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <span class="top-label label label-danger">3</span><i class="fa fa-envelope fa-3x"></i>
                     </a>
-					<div data-role="navbarmsgcontent" id="navbarmsgcontent">
-					</div>
+                    <ul class="dropdown-menu dropdown-messages" id="navbarmsgcontent">
+                    </ul>
                 </li>
 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <span class="top-label label label-success">4</span>  <i class="fa fa-tasks fa-3x"></i>
                     </a>
-                   <div  id="dropdowntasks">
-					</div>
+                    <ul class="dropdown-menu dropdown-tasks" id="dropdowntasks">
+                    </ul>
                 </li>
 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <span class="top-label label label-warning">5</span>  <i class="fa fa-bell fa-3x"></i>
                     </a>
-                    <div data-role="dropdownalerts" id="dropdownalerts">
-					</div>
+                    <ul class="dropdown-menu dropdown-alerts" id="dropdownalerts">
+                    </ul>
                 </li>
 
                 <li class="dropdown">
@@ -210,8 +84,11 @@
 
         <!-- navbar side -->
         <nav class="navbar-default navbar-static-side" role="navigation">
-        <div data-role="sidebar" id="sidebar"></div>
-       
+    	<div class="sidebar-collapse">
+	    	<ul class="nav" id="side-menu">
+    		</ul>
+
+       </div>
         </nav>
         <!-- end navbar side -->
         <!--  page-wrapper -->
@@ -346,5 +223,134 @@
         <!-- end page-wrapper -->
     </div>
     <!-- end wrapper -->
+	<!-- Core Scripts - Include with every page -->
+	<script src="assets/plugins/jquery-1.10.2.js"></script>
+	<script src="assets/plugins/bootstrap/bootstrap.min.js"></script>
+	<script src="assets/plugins/metisMenu/jquery.metisMenu.js"></script>
+	<script src="assets/plugins/pace/pace.js"></script>
+	<script src="assets/scripts/siminta.js"></script>
+	<!-- Page-Level Plugin Scripts-->
+	<script src="assets/plugins/flot/jquery.flot.js"></script>
+	<script src="assets/plugins/flot/jquery.flot.tooltip.min.js"></script>
+	<script src="assets/plugins/flot/jquery.flot.resize.js"></script>
+	<script src="assets/plugins/flot/jquery.flot.pie.js"></script>
+	<script src="assets/plugins/morris/raphael-2.1.0.min.js"></script>
+	<script src="assets/plugins/morris/morris.js"></script>
+	<script src="assets/scripts/dashboard.js"></script>
+	<script>
+		$(function () {  
+		Morris.Bar({
+		element: 'morris-bar-chart',
+		data: [
+		    { y: 'May 2014', a: 40000,  b: 39000 },
+		    { y: 'Jun 2014', a: 39000,  b: 38000 },
+		    { y: 'Jul 2014', a: 38000,  b: 38000 }
+		  ],
+		  xkey: 'y',
+		  ykeys: ['a', 'b'],
+		  labels: ['Income', 'Expenditure']
+		});
+		Morris.Bar({
+		element: 'morris-bar-chart-complaints',
+		data: [
+		    { y: 'May 2014', a: 15,  b: 5 },
+		    { y: 'Jun 2014', a: 20,  b: 22 },
+		    { y: 'Jul 2014', a: 10,  b: 5 }
+		  ],
+		  xkey: 'y',
+		  ykeys: ['a', 'b'],
+		  labels: ['Raised', 'Addressed']
+		});
+		
+	   Morris.Line({
+        element: 'morris-line-chart',
+        data: [{
+            y: 'Jun',
+            a: 100
+
+        }, {
+            y: 'Jul',
+            a: 75
+        }, {
+            y: 'Aug',
+            a: 80
+        }],
+        parseTime: false,
+        xkey: 'y',
+        ykeys: 'a',
+        labels: 'On-time Payment',
+        hideHover: 'auto',
+        resize: true
+    	});
+	});
+	</script>
+	<script>
+		$(function() {
+		var data = [{
+        label: "Salaries",
+        data: 20
+	    }, {
+        label: "AMC Cost",
+        data: 20
+    	},  {
+    	label: "Electricity",
+        data: 30
+	    },{
+    	label: "Repairs",
+        data: 30
+    	}];
+	    var plotObj = $.plot($("#flot-pie-chart1"), data, {
+        series: {
+            pie: {
+                show: true
+            }
+        },
+        grid: {
+            hoverable: true
+        },
+        tooltip: true,
+        tooltipOpts: {
+            content: "%p.0%, %s", // show percentages, rounding to 2 decimal places
+            shifts: {
+                x: 20,
+                y: 0
+            },
+            defaultTheme: false
+        }
+    	});
+	});
+	</script>
+	<script>
+		$(function() {
+	    var data = [{
+        label: "Assets under AMC Coverage",
+        data: 10
+    	}, {
+        label: "Assets not under AMC Coverage",
+        data: 10
+	    }];
+    	var plotObj = $.plot($("#flot-pie-chart"), data, {
+        	series: {
+	            pie: {
+    	            show: true
+       	     }
+        	},
+	        grid: {
+            hoverable: true
+    	    },
+        	tooltip: true,
+	        tooltipOpts: {
+            content: "%p.0%, %s", // show percentages, rounding to 2 decimal places
+            shifts: {
+                x: 20,
+                y: 0
+            },
+            defaultTheme: false
+    	    }
+    		});
+		});
+	</script>
+
 </body>
+
 </html>

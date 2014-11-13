@@ -30,4 +30,140 @@ insert into member(member_id,member_first_name,member_last_name,member_gender,me
 
 insert into member_apartment_flat(apartment_id,flat_number,primary_status_id,member_id,member_type,member_status,member_status_start_date) values (1,"101","1_101_owner","MEM10000001","owner","active","2013-10-18");
 
+
+
+<?php
+	header('content-type: application/json; charset=utf-8');
+	header("Access-Control-Allow-Origin:*");
+	            <!-- sidebar-collapse -->
+	echo '<div class="sidebar-collapse">';
+                <!-- side-menu -->
+                echo '<ul class="nav" id="side-menu">';
+                   echo '<li>';
+                        <!-- user image section-->
+                        echo '<div class="user-section">';
+                            echo '<div class="user-section-inner">';
+                                echo '<img src="assets/img/user.jpg" alt="">';
+                            echo '</div>';
+                            echo '<div class="user-info">';
+                            echo '<div>Vijayanathan </div>';
+                                echo '<div class="user-text-online">';
+                                    echo '<span class="user-circle-online btn btn-success btn-circle "></span>Online';
+                                echo '</div>';
+                            echo '</div>';
+                        echo '</div>';
+                        <!--end user image section-->
+                    echo '</li>';
+                    echo '<li class="sidebar-search">';
+                        <!-- search section-->
+                        echo '<div class="input-group custom-search-form">';
+                            echo '<input type="text" class="form-control" placeholder="Search...">';
+                            echo '<span class="input-group-btn">';
+                                echo '<button class="btn btn-default" type="button">';
+                                    echo '<i class="fa fa-search"></i>';
+                                echo '</button>';
+                            echo '</span>';
+                        echo '</div>';
+                        <!--end search section-->
+                    echo '</li>';
+                    echo '<li class="selected">';
+                        echo '<a href="dashboard.php"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>'
+                    echo '</li>';
+                    echo '<li>';
+                        echo '<a href="#"><i class="fa fa-home fa-fw"></i>My Vicinity<span class="fa arrow"></span></a>';
+                        echo '<ul class="nav nav-second-level">';
+							echo '<li>';
+                                echo '<a href="family.php">My Family Members</a>';
+                            echo '</li>';
+							echo '<li>';
+                                echo '<a href="panels-wells.html">My Contact Details</a>';
+                            echo '</li>';
+                            echo '<li>';
+                                echo '<a href="panels-wells.html">My Neighbours</a>';
+                            echo '</li>';
+                            echo '<li>';
+                                echo '<a href="notifications.html">My Personal Assets</a>';
+                            echo '</li>';
+                            echo '<li>';
+                                echo '<a href="notifications.html">Advertisements</a>';
+                            echo '</li>';
+                            echo '<li>';
+                                echo '<a href="notifications.html">Invitation</a>';
+                            echo '</li>';
+                        echo '</ul>';
+                        <!-- second-level-items -->
+                    echo '</li>';
+                      echo '<li>';
+                        echo '<a href="#"><i class="fa fa-wrench fa-fw"></i>Communication<span class="fa arrow"></span></a>';
+                        echo '<ul class="nav nav-second-level">';
+                            echo '<li>';
+                                echo '<a href="buttons.html">Notice Board</a>';
+                            echo '</li>';
+                            echo '<li>';
+                                echo '<a href="notifications.html">Complaints</a>';
+                            echo '</li>';
+                            echo '<li>';
+                                echo '<a href="buttons.html">Discussion Board</a>';
+                            echo '</li>';
+                        echo '</ul>';
+                        <!-- second-level-items -->
+                    echo '</li>';
+                    echo '<li>';
+                        echo '<a href="#"><i class="fa fa-sitemap fa-fw"></i>Management<span class="fa arrow"></span></a>';
+                        echo '<ul class="nav nav-second-level">';
+                            echo '<li>';
+                                echo '<a href="#">Accounts</a>';
+                            echo '</li>';
+                            echo '<li>';
+                                echo '<a href="#">AMC</a>';
+                            echo '</li>';
+                            echo '<li>';
+                                echo '<a href="#">Human Resources</a>';
+                            echo '</li>';
+                            echo '<li>';
+                                echo '<a href="#">Meetings</a>';
+                            echo '</li>';
+                            echo '<li>';
+                                echo '<a href="#">Broadcast Messages</a>';
+                            echo '</li>';
+                            echo '<li>';
+                                echo '<a href="#">Compliance</a>';
+                            echo '</li>';
+                            echo '<li>';
+                                echo '<a href="#">Checklists</a>';
+                            echo '</li>';
+                            echo '<li>';
+                                echo '<a href="#">Polls</a>';
+                            echo '</li>';
+                        echo '</ul>';
+                        <!-- second-level-items -->
+                    echo '</li>';
+                    echo '<li>';
+                        echo '<a href="#"><i class="fa fa-pencil fa-fw"></i>Configuration<span class="fa arrow"></span></a>';
+                        echo '<ul class="nav nav-second-level">';
+                            echo '<li>';
+                                echo '<a href="#">Add Flats</a>';
+                            echo '</li>';
+                            echo '<li>';
+                                echo '<a href="#">Configure Roles</a>';
+                            echo '</li>';
+                            echo '<li>';
+                                echo '<a href="#">Add Members</a>';
+                            echo '</li>';
+                            echo '<li>';
+                                echo '<a href="#">Monthly Maintenance Amount</a>';
+                            echo '</li>';
+                            echo '<li>';
+                                echo '<a href="#">Emergency Information</a>';
+                            echo '</li>';
+                        echo '</ul>';
+                        <!-- second-level-items -->
+                    echo '</li>';
+
+                echo '</ul>';
+                <!-- end side-menu -->
+            echo '</div>';
+            <!-- end sidebar-collapse -->
+
 	
+?>            

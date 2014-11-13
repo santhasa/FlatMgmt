@@ -1,7 +1,6 @@
 <?php
 		header("Access-Control-Allow-Origin:*");
-		echo '<ul class="dropdown-menu dropdown-alerts">
-                        <li>
+		echo '          <li>
                             <a href="#">
                                 <div>
                                     <i class="fa fa-comment fa-fw"></i>New Comment
@@ -51,7 +50,7 @@
                                 <strong>See All Alerts</strong>
                                 <i class="fa fa-angle-right"></i>
                             </a>
-                        </li>
-                    </ul>';
+                        </li>';
+
                   
 ?>

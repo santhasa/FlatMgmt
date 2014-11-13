@@ -1,21 +1,19 @@
 <?php
 	header("Access-Control-Allow-Origin:*");
-	echo '<div class="sidebar-collapse">';
-                echo '<ul class="nav" id="side-menu">';
                    echo '<li>';
                         echo '<div class="user-section">';
                             echo '<div class="user-section-inner">';
                             echo '<img src="assets/img/user.jpg" alt="">';
                             echo '</div>';
                             echo '<div class="user-info">';
-                            echo '<div>Vijayanathan </div>';
-                                echo '<div class="user-text-online">';
+                            	echo '<div>Vijayanathan </div>';
+	                            echo '<div class="user-text-online">';
                                     echo '<span class="user-circle-online btn btn-success btn-circle "></span>Online';
                                 echo '</div>';
-                            echo '</div>';
-                        echo '</div>';
-                    echo '</li>';
-                    echo '<li class="sidebar-search">';
+                           echo '</div>';
+    	                echo '</div>';
+                   echo '</li>';
+                   echo '<li class="sidebar-search">';
                         echo '<div class="input-group custom-search-form">';
                             echo '<input type="text" class="form-control" placeholder="Search...">';
                             echo '<span class="input-group-btn">';
@@ -24,13 +22,13 @@
                                 echo '</button>';
                             echo '</span>';
                         echo '</div>';
-                    echo '</li>';
-                    echo '<li class="selected">';
-                        echo '<a href="dashboard.php"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>';
-                    echo '</li>';
-                    echo '<li>';
+        	       echo '</li>';
+                   echo '<li class="selected">';
+                       echo '<a href="dashboard.php"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>';
+                   echo '</li>';
+                   echo '<li>';
                         echo '<a href="#"><i class="fa fa-home fa-fw"></i>My Vicinity<span class="fa arrow"></span></a>';
-                        echo '<ul class="nav nav-second-level">';
+                        echo '<ul class=\"nav nav-second-level\">';
 							echo '<li>';
                                 echo '<a href="family.php">My Family Members</a>';
                             echo '</li>';
@@ -51,7 +49,7 @@
                             echo '</li>';
                         echo '</ul>';
                     echo '</li>';
-                      echo '<li>';
+                     echo '<li>';
                         echo '<a href="#"><i class="fa fa-wrench fa-fw"></i>Communication<span class="fa arrow"></span></a>';
                         echo '<ul class="nav nav-second-level">';
                             echo '<li>';
@@ -114,6 +112,4 @@
                             echo '</li>';
                         echo '</ul>';
                     echo '</li>';
-                echo '</ul>';
-            echo '</div>';
 ?>            
