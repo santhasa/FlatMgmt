@@ -7,26 +7,34 @@ $(window).load(function () {
 	    $.each(data, function(){
 	    	server_ip=this.ipaddress;
     		server_port=this.port;
+    		var auth_token=getUrlVars()["auth_token"];
+    		var session_expiry=getUrlVars()["msg"];
+    		if (session_expiry=="sessionExpired") {
+    			$.ajax({
+					type: "GET",
+					async: false,
+					url: "http://"+server_ip+":"+server_port+"/flatmgmt/php/sessionvalidation.php?page=logoff&auth_token="+auth_token,
+					cache: false,
+					success: function (response) {
+						document.getElementById("errorMsg").style.visibility="visible";
+	                    document.getElementById("errorMsg").innerHTML="Your session seems to have timed out. Please enter credentials and continue.";
+					}
+				});
+    		}
+    		if (session_expiry=="logoff") {
+    			$.ajax({
+					type: "GET",
+					async: false,
+					url: "http://"+server_ip+":"+server_port+"/flatmgmt/php/sessionvalidation.php?page=logoff&auth_token="+auth_token,
+					cache: false,
+					success: function (response) {
+						document.getElementById("errorMsg").style.visibility="visible";
+	                    document.getElementById("errorMsg").innerHTML="Thank you for using Vicinity!";
+					}
+				});
+    		}
 	    });
 	}); 
-	// Now you can get the parameters you want like so:
-	var session_expiry=getUrlVars()["msg"];
-	var auth_token=getUrlVars()["auth_token"];
-	
-	//var session_expiry=location.search.split('msg=')[1] ? location.search.split('msg=')[1] : 'sessionAlive';
-	//var auth_token=location.search.split('auth_token=')[2] ? location.search.split('auth_token=')[2] : 'none';
-    if (session_expiry=="sessionExpired") {
-    	$.ajax({
-			type: "GET",
-			async: false,
-			url: "http://"+server_ip+":"+server_port+"/flatmgmt/php/sessionvalidation.php?page=logoff&auth_token="+auth_token,
-			cache: false,
-			success: function (response) {
-			}
-		});
-    }
-	//alert (session_expiry);
-	//alert (auth_token);
 });	
 
 function getUrlVars() {

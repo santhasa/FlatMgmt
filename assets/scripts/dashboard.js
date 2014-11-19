@@ -1,41 +1,51 @@
 var server_ip;
 var server_port;
+var auth_token;
 $(window).load(function () {
-	var auth_token=location.search.split('auth_token=')[1] ? location.search.split('auth_token=')[1] : 'notAuthenticated';
-	jQuery.getJSON('serverip.json',function(data){
-    	// data is an array of objects
+	auth_token=getUrlVars()["auth_token"];
+	$.getJSON('serverip.json',function(data){
 	    $.each(data, function(){
-	    	server_ip=this.ipaddress;
-	    	//alert (server_ip);
-    		server_port=this.port;
-    		//alert(server_port);
+				server_ip=this.ipaddress;
+				//alert(server_ip);
+   				server_port=this.port;
 	    });
-	});
-	$.ajax({
+	    $.ajax({
 			type: "GET",
 			async: false,
 			url: "http://" + server_ip + ":" + server_port + "/flatmgmt/php/sessionvalidation.php?page=dashboard&auth_token="+auth_token,
 			cache: false,
 			success: function (response) {
+				//alert ("inside 2");
 				var objJSON = eval("(function(){return " + response + ";})()");
-					//alert ("dashboard");
-					//alert (auth_token);
+				//alert ("dashboard");
+				//alert (auth_token);
 				if (objJSON.error=="sessionExpired") {
 					//alert ("index.html?msg=sessionExpired&auth_token="+auth_token);
 					window.location.href = "index.html?msg=sessionExpired&auth_token="+auth_token;
 				}
 				else {
+					//alert(server_ip);
+					onLoadNavBarMsgs();
+					onLoadDropDownTasks();
+					onLoadDropDownAlerts()
+					onLoadSideBar();
+					onLoadQuickInfo();
 					//alert ("Session Alive and Kicking!!");
 				}
 			}
+		});
 	});
-	onLoadNavBarMsgs();
-	onLoadDropDownTasks();
-	onLoadDropDownAlerts()
-	onLoadSideBar();
-	onLoadQuickInfo();
-
 });
+
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,    
+    function(m,key,value) {
+      vars[key] = value;
+    });
+    return vars;
+}
+
 function onLoadNavBarMsgs()
 {
 	var url='http://'+server_ip+':'+server_port+'/flatmgmt/php/navbar_msgs.php';
@@ -60,6 +70,6 @@ function onLoadQuickInfo()
 }
 function killSession()
 {
-	var auth_token=location.search.split('auth_token=')[1] ? location.search.split('auth_token=')[1] : 'notAuthenticated';
-	window.location.href = "index.html?msg=sessionExpired&auth_token="+auth_token;
+	auth_token=getUrlVars()["auth_token"];
+	window.location.href = "index.html?msg=logoff&auth_token="+auth_token;
 }
