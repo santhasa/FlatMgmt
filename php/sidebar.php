@@ -1,12 +1,26 @@
 <?php
+	session_start();
 	header("Access-Control-Allow-Origin:*");
-                   echo '<li>';
+	//echo $_SESSION['memberid'];
+	require 'vicinity_db_connection.php';
+	$sql='select member_first_name, member_last_name from member where member_id="'.$_SESSION['memberid'].'"';
+	//echo $sql;
+	$stmt0 =$db0->query($sql);
+	$count=0;
+	while($row0 = $stmt0->fetch(PDO::FETCH_ASSOC)) {
+		$count++;
+		$member_first_name = "{$row0['member_first_name']}";
+		$member_last_name="{$row0['member_last_name']}";
+	}
+
+	header("Access-Control-Allow-Origin:*");
+	               echo '<li>';
                         echo '<div class="user-section">';
                             echo '<div class="user-section-inner">';
                             echo '<img src="assets/img/user.jpg" alt="">';
                             echo '</div>';
                             echo '<div class="user-info">';
-                            	echo '<div>Vijayanathan </div>';
+                            	echo '<div> <h4>'.$member_first_name.'</h4></div>';
 	                            echo '<div class="user-text-online">';
                                     echo '<span class="user-circle-online btn btn-success btn-circle "></span>Online';
                                 echo '</div>';
@@ -50,8 +64,8 @@
                         echo '</ul>';
                     echo '</li>';
                      echo '<li>';
-                        echo '<a href="#"><i class="fa fa-wrench fa-fw"></i>Communication<span class="fa arrow"></span></a>';
-                        echo '<ul class="nav nav-second-level">';
+                        echo '<a href="#"><i class="fa fa-rss fa-fw"></i>Communication<span class="fa arrow"></span></a>';
+                        echo '<ul class=\"nav nav-second-level\">';
                             echo '<li>';
                                 echo '<a href="buttons.html">Notice Board</a>';
                             echo '</li>';
@@ -65,7 +79,7 @@
                     echo '</li>';
                     echo '<li>';
                         echo '<a href="#"><i class="fa fa-sitemap fa-fw"></i>Management<span class="fa arrow"></span></a>';
-                        echo '<ul class="nav nav-second-level">';
+                        echo '<ul class=\"nav nav-second-level\">';
                             echo '<li>';
                                 echo '<a href="#">Accounts</a>';
                             echo '</li>';
@@ -93,8 +107,8 @@
                         echo '</ul>';
                     echo '</li>';
                     echo '<li>';
-                        echo '<a href="#"><i class="fa fa-pencil fa-fw"></i>Configuration<span class="fa arrow"></span></a>';
-                        echo '<ul class="nav nav-second-level">';
+                        echo '<a href="#"><i class="fa fa-wrench fa-fw"></i>Configuration<span class="fa arrow"></span></a>';
+                        echo '<ul class=\"nav nav-second-level\">';
                             echo '<li>';
                                 echo '<a href="#">Add Flats</a>';
                             echo '</li>';
