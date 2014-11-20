@@ -33,14 +33,16 @@ $(window).load(function () {
 					}
 				});
     		} else {
-    			document.addEventListener("deviceready", onDeviceReady, false);
-    			if (window.localStorage.getItem("email")!=null && status=="false"){
-    				alert(window.localStorage.getItem("email"));
-    				status="true";
-	    			document.getElementById("email").value=window.localStorage.getItem("email");
-	    			document.getElementById("password").value=window.localStorage.getItem("password");
-	    			document.getElementById("loginform").submit();
-	    		}	
+    			document.addEventListener("deviceready", function(){
+					if (window.localStorage.getItem("email")!=null && status=="false"){
+    					alert(window.localStorage.getItem("email"));
+	    				status="true";
+		    			document.getElementById("email").value=window.localStorage.getItem("email");
+	    				document.getElementById("password").value=window.localStorage.getItem("password");
+	    				document.getElementById("loginform").submit();
+	    			}
+				},true);
+    				
     		}
 	    });
 	}); 
@@ -67,8 +69,8 @@ $(function(){
                 success: function(data){
                 	//alert(data);
                 	//test
-                	window.localStorage.setItem("email",document.getElementById('email'));
-                	window.localStorage.setItem("password",document.getElementById('password'));
+                	window.localStorage.setItem("email",document.getElementById("email").value);
+                	window.localStorage.setItem("password",document.getElementById("password").value);
                 	var objJSON = eval("(function(){return " + data + ";})()");
 					//alert(objJSON.role);
 					//alert(objJSON.auth_token);
