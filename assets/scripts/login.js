@@ -1,5 +1,6 @@
 var server_ip;
 var server_port;
+var status="false";
 
 $(window).load(function () {   
 	jQuery.getJSON('serverip.json',function(data){
@@ -32,13 +33,15 @@ $(window).load(function () {
 					}
 				});
     		} else {
-    			document.addEventListener("deviceready", onDeviceReady, false);
-    			if (window.localStorage.getItem("email")!=""){
-	    			document.getElementById("email")=window.localStorage.getItem("email");
-	    			document.getElementById("password")=window.localStorage.getItem("password");
+    			//document.addEventListener("deviceready", onDeviceReady, false);
+    			
+    			if (window.localStorage.getItem("email")!=null && status=="false"){
+    				status="true";
+	    			document.getElementById("email").value=window.localStorage.getItem("email");
+	    			document.getElementById("password").value=window.localStorage.getItem("password");
 	    			document.getElementById("loginform").submit();
 	    		}	
-    			
+    		}
 	    });
 	}); 
 	
