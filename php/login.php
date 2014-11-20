@@ -5,8 +5,10 @@ $wrng_pwd="Wrong Password";
 $invalid_email="E-mail does not exist";
 $email = $_POST["email"];
 $pwd = $_POST["password"];
+$platform=$_POST["platform"];
 //$email = "sankar@tickingminds.com";
 //$pwd = "sankar";
+//$platform="Mac";
 
 $sql = 'select * from member_credentials where member_email="'.$email.'"';
 //echo $sql;
@@ -32,17 +34,17 @@ if ($count>0) {
 		//echo $date;
 		$auth_token=hash('ripemd160', $email.$member_id.time());
 		$pagename="login";
-		$sql_insert_session_table='insert into session(session_user_email,session_user_id,session_role_id,auth_token,dtm,session_page_name) values
-		("'.$email.'","'.$member_id.'","'.$role.'","'.$auth_token.'","'.$date.'","'.$pagename.'")';
+		$sql_insert_session_table='insert into session(session_user_email,platform,session_user_id,session_role_id,auth_token,dtm,session_page_name) values
+		("'.$email.'","'.$platform.'","'.$member_id.'","'.$role.'","'.$auth_token.'","'.$date.'","'.$pagename.'")';
 		//echo $sql_insert_session_table;
 		$stmt1=$db0->query($sql_insert_session_table);
-		echo json_encode(array('role'=>$role,'auth_token'=>$auth_token));
+		echo json_encode(array('role'=>$role,'auth_token'=>$auth_token,'platform'=>$platform));
 	}
 	else {
-		echo json_encode(array('role'=>$wrng_pwd,'auth_token'=>'none'));
+		echo json_encode(array('role'=>$wrng_pwd,'auth_token'=>'none','platform'=>$platform));
 	}
 }
 else {
-	echo json_encode(array('role'=>$invalid_email,'auth_roken'=>'none'));
+	echo json_encode(array('role'=>$invalid_email,'auth_roken'=>'none','platform'=>$platform));
 }
 ?>

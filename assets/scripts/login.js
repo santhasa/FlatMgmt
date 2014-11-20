@@ -1,13 +1,15 @@
 var server_ip;
 var server_port;
 var status="false";
+var platform;
 
 $(window).load(function () {   
-	alert(navigator.platform);
-	alert(navigator.appCodeName);
-	alert(navigator.vendor);
-	alert(navigator.appName);
-	alert(navigator.userAgent);
+	var str = navigator.userAgent;
+	//alert(str.indexOf("Macintosh"));
+	if (str.indexOf("Macintosh")!=-1) document.getElementById("platform").value="Mac";
+	if (str.indexOf("Windows")!=-1) document.getElementById("platform").value="Win";
+	if (str.indexOf("Android")!=-1) document.getElementById("platform").value="Android";
+	platform=document.getElementById("platform").value;
 	$.getJSON('serverip.json',function(data){
     	// data is an array of objects
 	    $.each(data, function(){
@@ -15,18 +17,21 @@ $(window).load(function () {
     		server_port=this.port;
     		var auth_token=getUrlVars()["auth_token"];
     		var session_expiry=getUrlVars()["msg"];
-    		if (session_expiry=="sessionExpired") {
-    			$.ajax({
-					type: "GET",
-					async: false,
-					url: "http://"+server_ip+":"+server_port+"/flatmgmt/php/sessionvalidation.php?page=logoff&auth_token="+auth_token,
-					cache: false,
-					success: function (response) {
-						document.getElementById("errorMsg").style.visibility="visible";
-	                    document.getElementById("errorMsg").innerHTML="Your session seems to have timed out. Please enter credentials and continue.";
-					}
-				});
-    		} else if (session_expiry=="logoff") {
+    		if (platform=="Mac" || platform=="Win") {
+    			if (session_expiry=="sessionExpired") {
+    				$.ajax({
+						type: "GET",
+						async: false,
+						url: "http://"+server_ip+":"+server_port+"/flatmgmt/php/sessionvalidation.php?page=logoff&auth_token="+auth_token,
+						cache: false,
+						success: function (response) {
+							document.getElementById("errorMsg").style.visibility="visible";
+	                	    document.getElementById("errorMsg").innerHTML="Your session seems to have timed out. Please enter credentials and continue.";
+						}
+					});
+    			} 
+    		}
+    		if (session_expiry=="logoff") {
     			$.ajax({
 					type: "GET",
 					async: false,
@@ -50,7 +55,8 @@ $(window).load(function () {
 					}
 				});
     		} else {
-				//alert("I am here");
+				alert("I am here");
+				window.localStorage.clear();
 				if (window.localStorage.getItem("email")!=null && status=="false"){
     				//alert(window.localStorage.getItem("email"));
     				//alert(window.localStorage.getItem("password"));
@@ -82,7 +88,6 @@ $(function(){
             $.ajax({
                 type: 'POST',
                 data: postData,
-                //change the url for your project
                 url: 'http://'+server_ip+':'+server_port+'/flatmgmt/php/login.php',
                 success: function(data){
                 	//alert(data);
@@ -91,7 +96,8 @@ $(function(){
                 	window.localStorage.setItem("password",document.getElementById("password").value);
                 	var objJSON = eval("(function(){return " + data + ";})()");
 					//alert(objJSON.role);
-					//alert(objJSON.auth_token);
+					alert(objJSON.platform);
+					alert(objJSON.auth_token);
                  	if(objJSON.role=="Wrong Password") {
 		                    document.getElementById("errorMsg").style.visibility="visible";
 		                    document.getElementById("errorMsg").innerHTML="You seem to have entered a wrong password";
@@ -101,7 +107,7 @@ $(function(){
 		                    document.getElementById("errorMsg").innerHTML="Your e-mail does not seem to exist";
                     }
                     else {
-	                    window.location.href = "dashboard.html?auth_token="+objJSON.auth_token;
+	                    window.location.href = "dashboard.html?auth_token="+objJSON.auth_token+"&platform="+objJSON.platform;
 	                }
                 },
                 error: function(){

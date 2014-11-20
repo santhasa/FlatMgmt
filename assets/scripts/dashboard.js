@@ -1,8 +1,11 @@
 var server_ip;
 var server_port;
 var auth_token;
+var platform;
 $(window).load(function () {
 	auth_token=getUrlVars()["auth_token"];
+	platform=getUrlVars()["platform"];
+	alert(platform);
 	$.getJSON('serverip.json',function(data){
 	    $.each(data, function(){
 				server_ip=this.ipaddress;
@@ -12,13 +15,14 @@ $(window).load(function () {
 	    $.ajax({
 			type: "GET",
 			async: false,
-			url: "http://" + server_ip + ":" + server_port + "/flatmgmt/php/sessionvalidation.php?page=dashboard&auth_token="+auth_token,
+			url: "http://" + server_ip + ":" + server_port + "/flatmgmt/php/sessionvalidation.php?page=dashboard&auth_token="+auth_token+"&platform="+platform,
 			cache: false,
 			success: function (response) {
 				//alert ("inside 2");
 				var objJSON = eval("(function(){return " + response + ";})()");
 				//alert ("dashboard");
 				//alert (auth_token);
+				// alert(objJSON.error);
 				if (objJSON.error=="sessionExpired") {
 					//alert ("index.html?msg=sessionExpired&auth_token="+auth_token);
 					window.location.href = "index.html?msg=sessionExpired&auth_token="+auth_token;
