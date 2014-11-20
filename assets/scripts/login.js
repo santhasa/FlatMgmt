@@ -33,7 +33,7 @@ $(window).load(function () {
 				});
     		} else {
     			document.addEventListener("deviceready", onDeviceReady, false);
-    			if (window.localStorage.getItem("email")<>""){
+    			if (window.localStorage.getItem("email")!=""){
 	    			document.getElementById("email")=window.localStorage.getItem("email");
 	    			document.getElementById("password")=window.localStorage.getItem("password");
 	    			document.getElementById("loginform").submit();
