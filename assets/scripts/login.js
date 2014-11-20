@@ -33,15 +33,17 @@ $(window).load(function () {
 					}
 				});
     		} else {
-    			document.addEventListener("deviceready", function(){
-					if (window.localStorage.getItem("email")!=null && status=="false"){
-    					alert(window.localStorage.getItem("email"));
-	    				status="true";
-		    			document.getElementById("email").value=window.localStorage.getItem("email");
-	    				document.getElementById("password").value=window.localStorage.getItem("password");
-	    				document.getElementById("loginform").submit();
-	    			}
-				},true);
+				//alert("I am here");
+				if (window.localStorage.getItem("email")!=null && status=="false"){
+    				//alert(window.localStorage.getItem("email"));
+    				//alert(window.localStorage.getItem("password"));
+	    			status="true";
+		    		document.getElementById("email").value=window.localStorage.getItem("email");
+	    			document.getElementById("password").value=window.localStorage.getItem("password");
+	    			//document.getElementById("form").submit();
+	    			$('form').submit();
+	    		}
+
     				
     		}
 	    });
@@ -60,6 +62,7 @@ function getUrlVars() {
   
 $(function(){
         $('form').submit(function(){
+        	//alert("I am in submit form function");
             var postData = $(this).serialize();
             $.ajax({
                 type: 'POST',
