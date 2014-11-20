@@ -20,8 +20,7 @@ $(window).load(function () {
 	                    document.getElementById("errorMsg").innerHTML="Your session seems to have timed out. Please enter credentials and continue.";
 					}
 				});
-    		}
-    		if (session_expiry=="logoff") {
+    		} else if (session_expiry=="logoff") {
     			$.ajax({
 					type: "GET",
 					async: false,
@@ -32,9 +31,17 @@ $(window).load(function () {
 	                    document.getElementById("errorMsg").innerHTML="Thank you for using Vicinity!";
 					}
 				});
-    		}
+    		} else {
+    			document.addEventListener("deviceready", onDeviceReady, false);
+    			if (window.localStorage.getItem("email")<>""){
+	    			document.getElementById("email")=window.localStorage.getItem("email");
+	    			document.getElementById("password")=window.localStorage.getItem("password");
+	    			document.getElementById("loginform").submit();
+	    		}	
+    			
 	    });
 	}); 
+	
 });	
 
 function getUrlVars() {
@@ -56,7 +63,7 @@ $(function(){
                 url: 'http://'+server_ip+':'+server_port+'/flatmgmt/php/login.php',
                 success: function(data){
                 	//alert(data);
-                	window.localStorage.setItem("login",document.getElementById('email'));
+                	window.localStorage.setItem("email",document.getElementById('email'));
                 	window.localStorage.setItem("password",document.getElementById('password'));
                 	var objJSON = eval("(function(){return " + data + ";})()");
 					//alert(objJSON.role);
