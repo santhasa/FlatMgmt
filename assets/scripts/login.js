@@ -4,6 +4,10 @@ var status="false";
 
 $(window).load(function () {   
 	alert(navigator.platform);
+	alert(navigator.appCodeName);
+	alert(navigator.vendor);
+	alert(navigator.appName);
+	alert(navigator.userAgent);
 	$.getJSON('serverip.json',function(data){
     	// data is an array of objects
 	    $.each(data, function(){
