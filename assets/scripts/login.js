@@ -3,6 +3,7 @@ var server_port;
 var status="false";
 
 $(window).load(function () {   
+	alert(navigator.platform);
 	$.getJSON('serverip.json',function(data){
     	// data is an array of objects
 	    $.each(data, function(){
@@ -32,6 +33,18 @@ $(window).load(function () {
 	                    document.getElementById("errorMsg").innerHTML="Thank you for using Vicinity!";
 					}
 				});
+    		}  else if (session_expiry=="clearSession") {
+    			$.ajax({
+					type: "GET",
+					async: false,
+					url: "http://"+server_ip+":"+server_port+"/flatmgmt/php/sessionvalidation.php?page=logoff&auth_token="+auth_token,
+					cache: false,
+					success: function (response) {
+						window.localStorage.clear();
+						document.getElementById("errorMsg").style.visibility="visible";
+	                    document.getElementById("errorMsg").innerHTML="Thank you for using Vicinity!";
+					}
+				});
     		} else {
 				//alert("I am here");
 				if (window.localStorage.getItem("email")!=null && status=="false"){
@@ -43,8 +56,6 @@ $(window).load(function () {
 	    			//document.getElementById("form").submit();
 	    			$('form').submit();
 	    		}
-
-    				
     		}
 	    });
 	}); 

@@ -73,3 +73,8 @@ function killSession()
 	auth_token=getUrlVars()["auth_token"];
 	window.location.href = "index.html?msg=logoff&auth_token="+auth_token;
 }
+function clearSession()
+{
+	auth_token=getUrlVars()["auth_token"];
+	window.location.href = "index.html?msg=clearSession&auth_token="+auth_token;
+}
