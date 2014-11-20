@@ -3,7 +3,7 @@ var server_port;
 var status="false";
 
 $(window).load(function () {   
-	jQuery.getJSON('serverip.json',function(data){
+	$.getJSON('serverip.json',function(data){
     	// data is an array of objects
 	    $.each(data, function(){
 	    	server_ip=this.ipaddress;
@@ -33,9 +33,9 @@ $(window).load(function () {
 					}
 				});
     		} else {
-    			//document.addEventListener("deviceready", onDeviceReady, false);
-    			
+    			document.addEventListener("deviceready", onDeviceReady, false);
     			if (window.localStorage.getItem("email")!=null && status=="false"){
+    				alert(window.localStorage.getItem("email"));
     				status="true";
 	    			document.getElementById("email").value=window.localStorage.getItem("email");
 	    			document.getElementById("password").value=window.localStorage.getItem("password");
