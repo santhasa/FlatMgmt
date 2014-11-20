@@ -63,6 +63,7 @@ $(function(){
                 url: 'http://'+server_ip+':'+server_port+'/flatmgmt/php/login.php',
                 success: function(data){
                 	//alert(data);
+                	//test
                 	window.localStorage.setItem("email",document.getElementById('email'));
                 	window.localStorage.setItem("password",document.getElementById('password'));
                 	var objJSON = eval("(function(){return " + data + ";})()");
