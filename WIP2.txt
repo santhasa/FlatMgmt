@@ -1,0 +1,76 @@
+insert into apartment(apartment_name,apartment_address_line_1,apartment_address_line_2,apartment_address_line_3,apartment_city,apartment_state,apartment_country,apartment_pincode,apartment_primary_contact_name,apartment_primary_contact_email,apartment_primary_phone,apartment_alternate_contact_name,apartment_alternate_contact_email,apartment_alternate_phone,locality) values ("KG Towers","100, Velachery 100 Ft. Bypass Road","","Velachery","Chennai","Tamil Nadu","India", "600099","Vijayanathan N","vijay@tickingminds.com","00914443530107","","","","Velachery");
+
+
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"1B","1_1B_owner","1_1B_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"1C","1_1C_owner","1_1C_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"1D","1_1D_owner","1_1D_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"1E","1_1E_owner","1_1E_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"2A","1_2A_owner","1_2A_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"2B","1_2B_owner","1_2B_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"2C","1_2C_owner","1_2C_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"2D","1_2D_owner","1_2D_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"2E","1_2E_owner","1_2E_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"3A","1_3A_owner","1_3A_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"3B","1_3B_owner","1_3B_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"3C","1_3C_owner","1_3C_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"3D","1_3D_owner","1_3D_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"3E","1_3E_owner","1_3E_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"4A","1_4A_owner","1_4A_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"4B","1_4B_owner","1_4B_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"4C","1_4C_owner","1_4C_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"4D","1_4D_owner","1_4D_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"4E","1_4E_owner","1_4E_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"5A","1_5A_owner","1_5A_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"5B","1_5B_owner","1_5B_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"5C","1_5C_owner","1_5C_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"5D","1_5D_owner","1_5D_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"5E","1_5E_owner","1_5E_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"6A","1_6A_owner","1_6A_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"6B","1_6B_owner","1_6B_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"6C","1_6C_owner","1_6C_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"6D","1_6D_owner","1_6D_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"6E","1_6E_owner","1_6E_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"7A","1_7A_owner","1_7A_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"7B","1_7B_owner","1_7B_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"7C","1_7C_owner","1_7C_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"7D","1_7D_owner","1_7D_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"7E","1_7E_owner","1_7E_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"8A","1_8A_owner","1_8A_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"8B","1_8B_owner","1_8B_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"8C","1_8C_owner","1_8C_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"8D","1_8D_owner","1_8D_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"8E","1_8E_owner","1_8E_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"9A","1_9A_owner","1_9A_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"9B","1_9B_owner","1_9B_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"9C","1_9C_owner","1_9C_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"9D","1_9D_owner","1_9D_tenant");
+insert into flat(apartment_id,flat_number,primary_ownership_id,primary_tenancy_id) values(2,"9E","1_9E_owner","1_9E_tenant");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Insert into member_apartment_flat(apartment_id,flat_number,primary_status_id,member_id,member_type,member_status,
+member_status_start_date,member_status_end_date) values
+
+
+
+
+
+
+
+
+
+
+
+
+

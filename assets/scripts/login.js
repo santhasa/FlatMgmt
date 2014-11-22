@@ -55,8 +55,8 @@ $(window).load(function () {
 					}
 				});
     		} else {
-				alert("I am here");
-				window.localStorage.clear();
+				//alert("I am here");
+				//window.localStorage.clear();
 				if (window.localStorage.getItem("email")!=null && status=="false"){
     				//alert(window.localStorage.getItem("email"));
     				//alert(window.localStorage.getItem("password"));
@@ -96,8 +96,8 @@ $(function(){
                 	window.localStorage.setItem("password",document.getElementById("password").value);
                 	var objJSON = eval("(function(){return " + data + ";})()");
 					//alert(objJSON.role);
-					alert(objJSON.platform);
-					alert(objJSON.auth_token);
+					//alert(objJSON.platform);
+					//alert(objJSON.auth_token);
                  	if(objJSON.role=="Wrong Password") {
 		                    document.getElementById("errorMsg").style.visibility="visible";
 		                    document.getElementById("errorMsg").innerHTML="You seem to have entered a wrong password";

@@ -5,7 +5,7 @@ var platform;
 $(window).load(function () {
 	auth_token=getUrlVars()["auth_token"];
 	platform=getUrlVars()["platform"];
-	alert(platform);
+	//alert(platform);
 	$.getJSON('serverip.json',function(data){
 	    $.each(data, function(){
 				server_ip=this.ipaddress;
